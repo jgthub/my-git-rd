@@ -1,0 +1,29 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+ 
+ <constant name="struts.devMode" value="true" />
+  <package name="default" namespace="/" extends="struts-default">
+    <action name="addEntry" class="com.simple.EntryAction">
+      <interceptor-ref name="token" />
+      <interceptor-ref name="defaultStack"></interceptor-ref>
+      <result name="success">/homeAddress.jsp</result>
+      <result name="invalid.token">/invalid_token.jsp</result>
+    </action>
+    <action name="addAddress" class="com.simple.AddressAction">
+      <interceptor-ref name="token" />
+      <interceptor-ref name="defaultStack"></interceptor-ref>
+      <result name="success">/contact.jsp</result>
+      <result name="invalid.token">/invalid_token.jsp</result>
+    </action>
+    <action name="addContact" class="com.simple.ContactAction">
+      <interceptor-ref name="token" />
+      <interceptor-ref name="defaultStack"></interceptor-ref>
+      <result name="success">/success.jsp</result>
+      <result name="invalid.token">/invalid_token.jsp</result>
+    </action>        
+  </package>
+
+</struts>
